@@ -25,10 +25,6 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
-:root {
-  /* approximate header height; adjust if your header appears larger/smaller */
-  --header-h: 7.2rem;
-}
 @media only screen and (max-width: 75em) {
   html {
     font-size: 59%;
@@ -81,7 +77,7 @@ textarea {
 }
 
 .heading-primary {
-  font-size: 5rem;
+  font-size: 6rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
@@ -157,7 +153,7 @@ textarea {
   }
 }
 .heading-sec__sub--lt {
-  color: #eee;
+  color: #ffffff;
 }
 
 .heading-sm {
@@ -217,7 +213,7 @@ textarea {
 
 .text-primary {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
   width: 100%;
   line-height: 1.6;
@@ -234,23 +230,13 @@ textarea {
 
 .home-hero {
   color: #fff;
-  background: linear-gradient(to right, rgba(255, 140, 66, 0.8), rgba(255, 140, 66, 0.8)), url(../../assets/svg/common-bg.svg);
-  background-size: cover;
+  background-image: url("../assets/jpg/profile_pic.jpg");
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* use fixed if you want parallax */
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
   position: relative;
 }
-.home-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
 @media only screen and (max-width: 37.5em) {
   .home-hero {
     height: unset;
@@ -263,7 +249,6 @@ textarea {
   border: 2px solid #eee;
   border-left: 2px solid #eee;
   transform: translateY(-50%);
-  z-index: 3; /* above overlay */
 }
 @media only screen and (max-width: 56.25em) {
   .home-hero__socials {
@@ -275,7 +260,6 @@ textarea {
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3; /* above overlay */
 }
 @media only screen and (max-width: 37.5em) {
   .home-hero__mouse-scroll-cont {
@@ -301,38 +285,13 @@ textarea {
 .home-hero__social-icon {
   width: 100%;
 }
-.home-hero__container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* left side */
-  height: 100%;
-  position: relative;
-  z-index: 2; /* above overlay */
-  margin: 0 auto;
-}
-
-.home-hero__avatar {
-  flex: 0 0 40%; /* 25% width */
-  min-width: 150px;
-  max-width: 750px;
-}
-
-.home-hero__img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; /* optional */
-  object-fit: cover;
-  padding-left: 15rem; /* optional spacing from left */
-}
 .home-hero__content {
-  flex: 1;
-  max-width: 50%;
   position: absolute;
   top: 50%;
-  left: 65%;
+  left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90rem;
-  z-index: 2; /* make sure content sits above the overlay */
+  width: 92%;
 }
 @media only screen and (max-width: 37.5em) {
   .home-hero__content {
@@ -675,7 +634,7 @@ textarea {
   width: 100%;
   z-index: 1000;
   background: #000;
-  background: #FF8C42;
+  background: #000000;
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
 }
 .header__content {
