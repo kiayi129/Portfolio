@@ -157,7 +157,7 @@ textarea {
   }
 }
 .heading-sec__sub--lt {
-  color: #eee;
+  color: #ffffff;
 }
 
 .heading-sm {
@@ -318,11 +318,11 @@ textarea {
 }
 
 .home-hero__img {
-  width: 100%;
+  width: 75%;
   height: auto;
   border-radius: 10px; /* optional */
   object-fit: cover;
-  padding-left: 15rem; /* optional spacing from left */
+  margin-left: 15rem; /* optional spacing from left */
 }
 .home-hero__content {
   flex: 1;

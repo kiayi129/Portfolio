@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Portfolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
+    <meta name="description" content="Portfolio for Developer" />
 
     <link rel="stylesheet" href="./css/main.css" />
 
@@ -15,6 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("YWXky290z7Lyi3-h9"); // replace with your User ID
+      })();
+    </script>
   </head>
   <body>
     <header class="header">
@@ -32,18 +38,18 @@
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./Portfolio.html" class="header__link"> Home </a>
+              <a href="./index.html" class="header__link"> Home </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./Portfolio.html#about" class="header__link">About </a>
+              <a href="./index.html#about" class="header__link">About </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./Portfolio.html#projects" class="header__link">
+              <a href="./index.html#projects" class="header__link">
                 Projects
               </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./Portfolio.html#contact" class="header__link"> Contact </a>
+              <a href="./index.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -64,19 +70,19 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./Portfolio.html"> Home </a>
+              <a href="./index.html"> Home </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./Portfolio.html#about"> About </a>
+              <a href="./index.html#about"> About </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./Portfolio.html#projects"> Projects </a>
+              <a href="./index.html#projects"> Projects </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./Portfolio.html#contact"> Contact </a>
+              <a href="./index.html#contact"> Contact </a>
             </li>
           </ul>
         </div>
@@ -150,13 +156,6 @@
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main">About Me</span>
-          <span class="heading-sec__sub">
-            I’m someone who enjoys solving problems with both logic and creativity.
-            My background in Computer Science has equipped me with skills in data 
-            analysis, web development, and software engineering. Outside of coding,
-            I’m curious about how technology shapes everyday life, and I’m always
-            eager to learn new tools that can make work more impactful.
-          </span>
         </h2>
         <div class="about__content">
           <div class="about__content-main">
@@ -176,7 +175,7 @@
                 <strong>contact</strong> me here.
               </p>
             </div>
-            <a href="./Portfolio.html#contact" class="btn btn--med btn--theme dynamicBgClr"
+            <a href="./index.html#contact" class="btn btn--med btn--theme dynamicBgClr"
               >Contact</a
             >
           </div>
@@ -200,7 +199,7 @@
               <div class="skills__skill">React</div>
               <div class="skills__skill">Node.js</div>
               <div class="skills__skill">Vue.js</div>
-              <div class="skills__skill">Wordpress</div>
+              <div class="skills__skill">Data Mining</div>
             </div>
           </div>
         </div>
@@ -227,7 +226,7 @@
               />
             </div>
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Project 1 - Final Year Project</h3>
+              <h3 class="projects__row-content-title">1. Final Year Project</h3>
               <p class="projects__row-content-desc">
                 Airline NLP Analysis: Analysed British Airways customer reviews using
                 Natural Language Processing (NLP) to extract service-related aspects
@@ -244,21 +243,22 @@
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="./assets/jpeg/Apple-all.png"
+                src="./assets/png/project2.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
               />
             </div>
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Project 2</h3>
+              <h3 class="projects__row-content-title">2. Business Intelligence Project: Adidas Sales Insights</h3>
               <p class="projects__row-content-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                facilis tempora, explicabo quae quod deserunt eius sapiente
-                praesentium.
+                Designed and developed an interactive Tableau dashboard to analyze
+                 Adidas sales performance across the United States (2020–2021). 
+                 Applied business intelligence techniques to uncover key sales trends,
+                 evaluate product performance, and identify regional insights. 
               </p>
               <a
-                href="./project-2.html"
+                href="https://public.tableau.com/shared/GBKJC7PJZ?:display_count=n&:origin=viz_share_link"
                 class="btn btn--med btn--theme dynamicBgClr"
                 target="_blank"
                 >Case Study</a
@@ -302,7 +302,7 @@
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form action="#" id="contact-form" class="contact__form">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
@@ -391,5 +391,18 @@
     </footer>
 
     <script src="./index.js"></script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent default form reload
+
+        emailjs.sendForm('service_jygf6zd', 'template_ttl6sqq', this)
+          .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset(); // clear form
+          }, function(error) {
+            alert('Oops! Something went wrong: ' + JSON.stringify(error));
+          });
+    });
+    </script>
   </body>
 </html>
